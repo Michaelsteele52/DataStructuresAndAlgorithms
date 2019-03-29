@@ -5,7 +5,7 @@
         private Node _head;
         public int Peek()
         {
-            if (IsEmpty())
+            if (!IsEmpty())
             {
                 return _head.Value;
             }
@@ -15,7 +15,7 @@
 
         public int Pop()
         {
-            if (IsEmpty())
+            if (!IsEmpty())
             {
                 var output = _head.Value;
                 _head = _head.Next;
@@ -34,7 +34,7 @@
 
         public bool IsEmpty()
         {
-            return _head != null ? true : false;
+            return _head == null ? true : false;
         }
     }
 
@@ -42,5 +42,6 @@
     {
         public int Value { get; set; }
         public Node Next { get; set; }
+        public Node Previous { get; set; }
     }
 }
